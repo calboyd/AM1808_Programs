@@ -1,0 +1,17 @@
+prefix=/home/cboyd/Projects/rootfs
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+system_bus_default_address=unix:path=/home/cboyd/Projects/rootfs/var/run/dbus/system_bus_socket
+sysconfdir=/home/cboyd/Projects/rootfs/etc
+session_bus_services_dir=/home/cboyd/Projects/rootfs/share/dbus-1/services
+system_bus_services_dir=/home/cboyd/Projects/rootfs/share/dbus-1/system-services
+interfaces_dir=/home/cboyd/Projects/rootfs/share/dbus-1/interfaces
+daemondir=/home/cboyd/Projects/rootfs/bin
+
+Name: dbus
+Description: Free desktop message bus
+Version: 1.6.4
+Libs: -L${libdir} -ldbus-1
+Libs.private: -lpthread -lrt 
+Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include 
